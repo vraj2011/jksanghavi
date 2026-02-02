@@ -3,220 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jainesh Sanghavi | Sharekhan Partner</title>
+    <title>Jaineshkumar K. Sanghavi | Sharekhan Franchisee</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
     <style>
+        /* --- CSS STYLES START --- */
         :root {
-            --sk-red: #ed1c24;
-            --sk-black: #1a1a1a;
-            --glass: rgba(255, 255, 255, 0.9);
-        }<div id="accountModal" class="modal">
-    <div class="modal-content">
-        <h2 style="color:#ed1c24">Get Started</h2>
-        <p>Choose your preferred account opening method:</p>
-        <div class="btn-box">
-            <a href="https://www.sharekhan.com/open-account" target="_blank" class="btn btn-online" style="background:#ed1c24; color:white; display:block; padding:15px; margin-bottom:10px; border-radius:50px; text-decoration:none; font-weight:bold;">ONLINE (15 Mins)</a>
-            
-            <button class="btn btn-offline" onclick="alert('Contact Jaineshkumar at: [9328907222]')" style="width:100%; padding:15px; border-radius:50px; cursor:pointer;">OFFLINE (Talk to Us)</button>
-        </div>
-        <p onclick="closeModal()" style="margin-top:20px; cursor:pointer; color:grey">Close</p>
-<script>
-    function openModal() {
-        // This finds the window by its ID and makes it visible
-        document.getElementById("accountModal").style.display = "block";
-    }
-
-    function closeModal() {
-        // This hides the window again
-        document.getElementById("accountModal").style.display = "none";
-    }
-
-    // This closes the window if the user clicks anywhere outside the white box
-    window.onclick = function(event) {
-        var modal = document.getElementById("accountModal");
-        if (event.target == modal) {
-            modal.style.display = "none";
+            --sk-red: #ed1c24; /* Official Sharekhan Red */
+            --sk-black: #000000;
+            --glass-bg: rgba(255, 255, 255, 0.95);
+            --bg-overlay: rgba(255, 255, 255, 0.85);
         }
-    }
-</script>    </div>
-</div>
-<div class="card" onclick="openModal()">
-    <i class="fas fa-user-plus"></i>
-    <h3>Open Account</h3>
-    <p>Paperless digital onboarding or doorstep service.</p>
-</div>
+
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
+            padding: 0;
             color: #333;
-            /* Background with Sharekhan-style feel */
-            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), 
-                        url('https://www.sharekhan.com/assets/images/sharekhan-logo-rb.png');
+            /* Background Image with Overlay */
+            background-image: linear-gradient(var(--bg-overlay), var(--bg-overlay)), 
+                              url('https://upload.wikimedia.org/wikipedia/en/thumb/5/55/Sharekhan_Logo.svg/1200px-Sharekhan_Logo.svg.png');
+            background-size: 500px;
+            background-repeat: repeat;
             background-attachment: fixed;
-            background-repeat: no-repeat;
             background-position: center;
-            background-size: 400px; /* Watermark style */
         }
 
+        /* Header */
         header {
-            background: var(--sk-black);
+            background-color: var(--sk-black);
+            color: white;
             padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        .logo-box img { height: 40px; vertical-align: middle; }
-        
+        .brand-name { font-size: 1.1rem; font-weight: 700; letter-spacing: 1px; }
+        .tagline { font-size: 0.8rem; color: #ccc; }
+
+        /* Hero Section */
         .hero {
-            padding: 80px 5%;
             text-align: center;
-            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            padding: 80px 20px;
+            background: linear-gradient(180deg, rgba(0,0,0,0.8), rgba(0,0,0,0.6));
             color: white;
             border-bottom: 5px solid var(--sk-red);
         }
 
-        .hero h1 { font-size: 2.8rem; margin-bottom: 10px; letter-spacing: 1px; }
-        .hero p { font-size: 1.2rem; color: #ccc; }
+        .hero h1 { font-size: 2.5rem; margin: 0 0 10px 0; }
+        .hero h2 { font-size: 1.2rem; font-weight: 300; opacity: 0.9; margin-bottom: 30px; }
+        
+        .cta-button {
+            background-color: var(--sk-red);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: transform 0.2s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+        .cta-button:hover { transform: scale(1.05); background-color: #c4161d; }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-
-        /* Modern Grid */
+        /* Services Grid */
+        .container { max-width: 1100px; margin: -50px auto 50px; padding: 0 20px; }
+        
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 25px;
-            margin-top: -80px;
         }
 
         .card {
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            padding: 40px 20px;
-            border-radius: 20px;
+            background: var(--glass-bg);
+            padding: 30px;
+            border-radius: 15px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: 0.3s;
-            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
             cursor: pointer;
+            border-top: 5px solid transparent;
         }
 
-        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(237, 28, 36, 0.2); }
-        .card i { font-size: 3rem; color: var(--sk-red); margin-bottom: 20px; display: block; }
-        .card h3 { font-size: 1.4rem; margin-bottom: 10px; color: var(--sk-black); }
+        .card:hover { transform: translateY(-10px); border-top: 5px solid var(--sk-red); }
+        .card i { font-size: 2.5rem; color: var(--sk-red); margin-bottom: 15px; }
+        .card h3 { margin: 10px 0; color: var(--sk-black); }
+        .card p { font-size: 0.9rem; color: #666; }
 
-        /* Popup Modal */
+        /* MODAL POPUP (The Critical Part) */
         .modal {
-            display: none;
+            display: none; /* Hidden by default */
             position: fixed;
-            z-index: 9999;
+            z-index: 2000;
             left: 0; top: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.8);
+            background-color: rgba(0,0,0,0.8);
             backdrop-filter: blur(5px);
         }
 
         .modal-content {
-            background: white;
+            background-color: white;
+            margin: 15% auto;
+            padding: 30px;
+            border-radius: 15px;
             width: 90%;
-            max-width: 450px;
-            margin: 10% auto;
-            padding: 40px;
-            border-radius: 25px;
-            position: relative;
+            max-width: 400px;
             text-align: center;
+            position: relative;
+            animation: slideDown 0.3s ease-out;
         }
 
-        .btn-box { display: flex; flex-direction: column; gap: 15px; margin-top: 25px; }
+        @keyframes slideDown { from {top: -50px; opacity: 0;} to {top: 0; opacity: 1;} }
+
+        .modal-buttons { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
         
-        .btn {
+        .btn-option {
             padding: 15px;
-            border-radius: 50px;
+            border-radius: 8px;
             text-decoration: none;
-            font-weight: 700;
-            transition: 0.3s;
-            border: none;
-            cursor: pointer;
+            font-weight: bold;
+            display: block;
+            border: 1px solid #ddd;
         }
+        
+        .online { background: var(--sk-red); color: white; border: none; }
+        .offline { background: #f4f4f4; color: #333; }
+        
+        .close-txt { margin-top: 15px; cursor: pointer; color: #888; font-size: 0.9rem; text-decoration: underline; }
 
-        .btn-online { background: var(--sk-red); color: white; }
-        .btn-online:hover { background: #c4131a; }
-        .btn-offline { background: #eee; color: #333; }
-
-        /* Floating WhatsApp */
-        .whatsapp {
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #25d366;
+            bottom: 25px; right: 25px;
+            background-color: #25d366;
             color: white;
-            width: 60px;
-            height: 60px;
+            width: 60px; height: 60px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            text-align: center;
             font-size: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            z-index: 100;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 9999;
+            display: flex; align-items: center; justify-content: center;
+            text-decoration: none;
         }
 
-        footer { background: #1a1a1a; color: white; padding: 50px 5%; text-align: center; margin-top: 50px; }
+        footer { text-align: center; padding: 30px; background: #111; color: white; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="logo-box">
-        <span style="font-weight:bold; font-size: 1.2rem;">JAINESH SANGHAVI</span>
-    </div>
-    <div><small>Authorized Sharekhan Partner</small></div>
-</header>
+    <header>
+        <div class="brand-name">J.K. SANGHAVI</div>
+        <div class="tagline">Official Sharekhan Franchisee</div>
+    </header>
 
-<section class="hero">
-    <h1>Jainesh Sanghavi</h1>
-    <p>Empowering Your Wealth with Professional Stock Broking</p>
-</section>
+    <section class="hero">
+        <h1>Jaineshkumar Kanaiyalal Sanghavi</h1>
+        <h2>Your Trusted Partner in Wealth Creation</h2>
+        <button class="cta-button" onclick="openPopup()">Open Free Account</button>
+    </section>
 
-<div class="container">
-    <div class="grid">
-        <div class="card" onclick="openModal()">
-            <i class="fas fa-user-plus"></i>
-            <h3>Open Account</h3>
-            <p>Paperless digital onboarding or doorstep service.</p>
-        </div>
-
-        <a href="https://www.sharekhan.com/mutual-funds" target="_blank" style="text-decoration:none">
-            <div class="card">
-                <i class="fas fa-chart-line"></i>
-                <h3>New SIP</h3>
-                <p>Start a Systematic Investment Plan today.</p>
+    <div class="container">
+        <div class="grid">
+            
+            <div class="card" onclick="openPopup()">
+                <i class="fas fa-user-plus"></i>
+                <h3>Open Account</h3>
+                <p>Digital KYC or Offline Service</p>
             </div>
-        </a>
 
-        <div class="card" onclick="alert('Coming Soon: Real-time IPO Tracker')">
-            <i class="fas fa-fire"></i>
-            <h3>Upcoming IPO</h3>
-            <p>Apply for the latest market listings.</p>
-        </div>
+            <a href="https://www.sharekhan.com/mutual-funds" target="_blank" style="text-decoration: none; color: inherit;">
+                <div class="card">
+                    <i class="fas fa-piggy-bank"></i>
+                    <h3>New SIP</h3>
+                    <p>Start investing in Mutual Funds</p>
+                </div>
+            </a>
 
-        <div class="card">
-            <i class="fas fa-coins"></i>
-            <h3>Equity Trading</h3>
-            <p>Expert advice on long-term & intraday shares.</p>
+            <a href="https://www.sharekhan.com/login" target="_blank" style="text-decoration: none; color: inherit;">
+                <div class="card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Trade Shares</h3>
+                    <p>Equity, F&O, and Commodities</p>
+                </div>
+            </a>
+
+            <div class="card" onclick="alert('Check Sharekhan App for latest IPOs')">
+                <i class="fas fa-bullhorn"></i>
+                <h3>IPO Corner</h3>
+                <p>Apply for new market listings</p>
+            </div>
+
         </div>
     </div>
-</div>
 
-<div id="accountModal" class="modal">
-    <div class="modal-content">
-        <h2 style="color:var(--sk-red)">Get Started</h2>
-        <p
+    <div id="accountModal" class="modal">
+        <div class="modal-content">
+            <h2 style="color:var(--sk-red); margin-top:0;">Start Journey</h2>
+            <p>How would you like to open your account?</p>
+            
+            <div class="modal-buttons">
+                <a href="https://www.sharekhan.com/open-account" target="_blank" class="btn-option online">
+                    <i class="fas fa-laptop"></i> Go Online (Instant)
+                </a>
+                
+                <a href="tel:+919876543210" class="btn-option offline">
+                    <i class="fas fa-phone-alt"></i> Call for Offline Visit
+                </a>
+            </div>
 
+            <div class="close-txt" onclick="closePopup()">Close Window</div>
+        </div>
+    </div>
 
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
+    <footer>
+        <p>&copy; 2026 J.K. Sanghavi Financial Services</p>
+        <p>Investments in securities market are subject to market risks.</p>
+    </footer>
 
+    <script>
+        // Function to SHOW the popup
+        function openPopup() {
+            document.getElementById("accountModal").style.display = "block";
+        }
+
+        // Function to HIDE the popup
+        function closePopup() {
+            document.getElementById("accountModal").style.display = "none";
+        }
+
+        // Close popup if user clicks outside the white box
+        window.onclick = function(event) {
+            var modal = document.getElementById("accountModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
