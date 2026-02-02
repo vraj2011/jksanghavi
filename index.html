@@ -21,7 +21,25 @@
             <button class="btn btn-offline" onclick="alert('Contact Jaineshkumar at: [9328907222]')" style="width:100%; padding:15px; border-radius:50px; cursor:pointer;">OFFLINE (Talk to Us)</button>
         </div>
         <p onclick="closeModal()" style="margin-top:20px; cursor:pointer; color:grey">Close</p>
-    </div>
+<script>
+    function openModal() {
+        // This finds the window by its ID and makes it visible
+        document.getElementById("accountModal").style.display = "block";
+    }
+
+    function closeModal() {
+        // This hides the window again
+        document.getElementById("accountModal").style.display = "none";
+    }
+
+    // This closes the window if the user clicks anywhere outside the white box
+    window.onclick = function(event) {
+        var modal = document.getElementById("accountModal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>    </div>
 </div>
 <div class="card" onclick="openModal()">
     <i class="fas fa-user-plus"></i>
@@ -198,6 +216,7 @@
     <div class="modal-content">
         <h2 style="color:var(--sk-red)">Get Started</h2>
         <p
+
 
 
 
