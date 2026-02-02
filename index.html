@@ -4,33 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jaineshkumar K. Sanghavi | Sharekhan Franchisee</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     
     <style>
-        /* --- CSS STYLES START --- */
         :root {
-            --sk-red: #ed1c24; /* Official Sharekhan Red */
+            --sk-red: #ed1c24; 
             --sk-black: #000000;
             --glass-bg: rgba(255, 255, 255, 0.95);
-            --bg-overlay: rgba(255, 255, 255, 0.85);
         }
 
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            color: #333;
-            /* Background Image with Overlay */
-            background-image: linear-gradient(var(--bg-overlay), var(--bg-overlay)), 
+            background-color: #f4f4f4;
+            /* Sharekhan Logo Watermark Background */
+            background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
                               url('https://upload.wikimedia.org/wikipedia/en/thumb/5/55/Sharekhan_Logo.svg/1200px-Sharekhan_Logo.svg.png');
-            background-size: 500px;
-            background-repeat: repeat;
+            background-size: 400px;
             background-attachment: fixed;
             background-position: center;
+            background-repeat: no-repeat;
         }
 
-        /* Header */
         header {
             background-color: var(--sk-black);
             color: white;
@@ -38,108 +36,88 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
 
-        .brand-name { font-size: 1.1rem; font-weight: 700; letter-spacing: 1px; }
-        .tagline { font-size: 0.8rem; color: #ccc; }
-
-        /* Hero Section */
         .hero {
-            text-align: center;
-            padding: 80px 20px;
-            background: linear-gradient(180deg, rgba(0,0,0,0.8), rgba(0,0,0,0.6));
+            background: linear-gradient(180deg, #111 0%, #333 100%);
             color: white;
+            padding: 80px 20px;
+            text-align: center;
             border-bottom: 5px solid var(--sk-red);
         }
 
-        .hero h1 { font-size: 2.5rem; margin: 0 0 10px 0; }
-        .hero h2 { font-size: 1.2rem; font-weight: 300; opacity: 0.9; margin-bottom: 30px; }
+        .hero h1 { margin: 0; font-size: 2.2rem; line-height: 1.2; }
+        .hero h2 { font-weight: 300; opacity: 0.8; font-size: 1rem; margin-top: 10px; }
         
-        .cta-button {
+        .btn-main {
             background-color: var(--sk-red);
             color: white;
-            padding: 15px 30px;
+            padding: 12px 35px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
             display: inline-block;
-            transition: transform 0.2s;
+            margin-top: 25px;
             cursor: pointer;
             border: none;
             font-size: 1rem;
+            transition: 0.3s;
         }
-        .cta-button:hover { transform: scale(1.05); background-color: #c4161d; }
+        .btn-main:hover { background-color: #c0151c; transform: scale(1.05); }
 
-        /* Services Grid */
-        .container { max-width: 1100px; margin: -50px auto 50px; padding: 0 20px; }
-        
+        /* GRID SYSTEM */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: -40px auto 50px;
+            padding: 0 20px;
         }
 
         .card {
-            background: var(--glass-bg);
+            background: white;
             padding: 30px;
             border-radius: 15px;
             text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
             cursor: pointer;
             border-top: 5px solid transparent;
         }
-
-        .card:hover { transform: translateY(-10px); border-top: 5px solid var(--sk-red); }
+        .card:hover { transform: translateY(-5px); border-top: 5px solid var(--sk-red); }
         .card i { font-size: 2.5rem; color: var(--sk-red); margin-bottom: 15px; }
-        .card h3 { margin: 10px 0; color: var(--sk-black); }
-        .card p { font-size: 0.9rem; color: #666; }
-
-        /* MODAL POPUP (The Critical Part) */
+        .card h3 { margin: 10px 0; color: #333; }
+        .card p { color: #666; font-size: 0.9rem; }
+        
+        /* MODAL POPUP (The Hidden Window) */
         .modal {
-            display: none; /* Hidden by default */
-            position: fixed;
-            z-index: 2000;
-            left: 0; top: 0; width: 100%; height: 100%;
+            display: none; 
+            position: fixed; 
+            z-index: 2000; 
+            left: 0; top: 0; width: 100%; height: 100%; 
             background-color: rgba(0,0,0,0.8);
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(4px);
         }
-
         .modal-content {
-            background-color: white;
-            margin: 15% auto;
-            padding: 30px;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 400px;
-            text-align: center;
-            position: relative;
+            background-color: white; margin: 20% auto; padding: 30px; 
+            width: 85%; max-width: 400px; border-radius: 15px; text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
             animation: slideDown 0.3s ease-out;
         }
+        @keyframes slideDown { from {transform: translateY(-50px); opacity: 0;} to {transform: translateY(0); opacity: 1;} }
 
-        @keyframes slideDown { from {top: -50px; opacity: 0;} to {top: 0; opacity: 1;} }
-
-        .modal-buttons { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
-        
         .btn-option {
-            padding: 15px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            display: block;
-            border: 1px solid #ddd;
+            display: block; padding: 15px; margin: 10px 0; border-radius: 8px; 
+            text-decoration: none; font-weight: bold; transition: 0.2s;
         }
-        
         .online { background: var(--sk-red); color: white; border: none; }
-        .offline { background: #f4f4f4; color: #333; }
-        
-        .close-txt { margin-top: 15px; cursor: pointer; color: #888; font-size: 0.9rem; text-decoration: underline; }
+        .offline { background: #f0f0f0; color: #333; border: 1px solid #ddd; }
+        .offline:hover { background: #e0e0e0; }
 
-        /* Floating WhatsApp Button */
+        /* FIXED WHATSAPP BUTTON */
         .whatsapp-float {
             position: fixed;
             bottom: 25px; right: 25px;
@@ -147,111 +125,106 @@
             color: white;
             width: 60px; height: 60px;
             border-radius: 50%;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-            z-index: 9999;
             display: flex; align-items: center; justify-content: center;
+            font-size: 35px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            z-index: 9999;
             text-decoration: none;
+            transition: 0.3s;
         }
+        .whatsapp-float:hover { transform: scale(1.1); }
 
-        footer { text-align: center; padding: 30px; background: #111; color: white; font-size: 0.8rem; }
+        footer { text-align: center; padding: 40px 20px; background: #1a1a1a; color: #888; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="brand-name">J.K. SANGHAVI</div>
-        <div class="tagline">Official Sharekhan Franchisee</div>
-    </header>
+<header>
+    <div style="font-weight:bold; font-size:1.2rem; letter-spacing:1px;">J.K. SANGHAVI</div>
+    <div style="font-size:0.8rem; opacity:0.8;">Sharekhan Franchisee</div>
+</header>
 
-    <section class="hero">
-        <h1>Jaineshkumar Kanaiyalal Sanghavi</h1>
-        <h2>Your Trusted Partner in Wealth Creation</h2>
-        <button class="cta-button" onclick="openPopup()">Open Free Account</button>
-    </section>
+<section class="hero">
+    <h1>Jaineshkumar Kanaiyalal Sanghavi</h1>
+    <h2>Professional Stock Broking & Wealth Management</h2>
+    <button class="btn-main" onclick="openPopup()">Open Free Account</button>
+</section>
 
-    <div class="container">
-        <div class="grid">
-            
-            <div class="card" onclick="openPopup()">
-                <i class="fas fa-user-plus"></i>
-                <h3>Open Account</h3>
-                <p>Digital KYC or Offline Service</p>
-            </div>
-
-            <a href="https://www.sharekhan.com/mutual-funds" target="_blank" style="text-decoration: none; color: inherit;">
-                <div class="card">
-                    <i class="fas fa-piggy-bank"></i>
-                    <h3>New SIP</h3>
-                    <p>Start investing in Mutual Funds</p>
-                </div>
-            </a>
-
-            <a href="https://www.sharekhan.com/login" target="_blank" style="text-decoration: none; color: inherit;">
-                <div class="card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Trade Shares</h3>
-                    <p>Equity, F&O, and Commodities</p>
-                </div>
-            </a>
-
-            <div class="card" onclick="alert('Check Sharekhan App for latest IPOs')">
-                <i class="fas fa-bullhorn"></i>
-                <h3>IPO Corner</h3>
-                <p>Apply for new market listings</p>
-            </div>
-
-        </div>
+<div class="grid">
+    <div class="card" onclick="openPopup()">
+        <i class="fas fa-user-check"></i>
+        <h3>Open Account</h3>
+        <p>Instant Digital or Offline Process</p>
     </div>
-
-    <div id="accountModal" class="modal">
-        <div class="modal-content">
-            <h2 style="color:var(--sk-red); margin-top:0;">Start Journey</h2>
-            <p>How would you like to open your account?</p>
-            
-            <div class="modal-buttons">
-                <a href="https://www.sharekhan.com/open-account" target="_blank" class="btn-option online">
-                    <i class="fas fa-laptop"></i> Go Online (Instant)
-                </a>
-                
-                <a href="tel:+919876543210" class="btn-option offline">
-                    <i class="fas fa-phone-alt"></i> Call for Offline Visit
-                </a>
-            </div>
-
-            <div class="close-txt" onclick="closePopup()">Close Window</div>
+    
+    <a href="https://www.sharekhan.com/mutual-funds" target="_blank" style="text-decoration:none; color:inherit;">
+        <div class="card">
+            <i class="fas fa-chart-pie"></i>
+            <h3>New SIP</h3>
+            <p>Systematic Investment Plans</p>
         </div>
-    </div>
-
-    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <a href="https://www.sharekhan.com/login" target="_blank" style="text-decoration:none; color:inherit;">
+        <div class="card">
+            <i class="fas fa-chart-line"></i>
+            <h3>Trade Shares</h3>
+            <p>Equity & Commodities</p>
+        </div>
     </a>
 
-    <footer>
-        <p>&copy; 2026 J.K. Sanghavi Financial Services</p>
-        <p>Investments in securities market are subject to market risks.</p>
-    </footer>
+    <div class="card" onclick="alert('IPO Details Coming Soon!')">
+        <i class="fas fa-bullhorn"></i>
+        <h3>IPO Center</h3>
+        <p>New Market Listings</p>
+    </div>
+</div>
 
-    <script>
-        // Function to SHOW the popup
-        function openPopup() {
-            document.getElementById("accountModal").style.display = "block";
-        }
+<div id="accountModal" class="modal">
+    <div class="modal-content">
+        <h2 style="margin-top:0; color:var(--sk-red);">Start Investing</h2>
+        <p>How would you like to proceed?</p>
+        
+        <a href="https://www.sharekhan.com/open-account" target="_blank" class="btn-option online">
+            <i class="fas fa-laptop" style="margin-right:8px;"></i> Open Online (Fast)
+        </a>
 
-        // Function to HIDE the popup
-        function closePopup() {
-            document.getElementById("accountModal").style.display = "none";
-        }
+        <a href="tel:+919328907222" class="btn-option offline">
+            <i class="fas fa-phone-alt" style="margin-right:8px;"></i> Call Us (Offline)
+        </a>
+        
+        <p onclick="closePopup()" style="margin-top:15px; cursor:pointer; color:#888; text-decoration:underline;">Close Window</p>
+    </div>
+</div>
 
-        // Close popup if user clicks outside the white box
-        window.onclick = function(event) {
-            var modal = document.getElementById("accountModal");
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
+<a href="https://wa.me/919328907222" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<footer>
+    <p>Contact: +91 93289 07222</p>
+    <p>&copy; 2026 J.K. Sanghavi Financial Services</p>
+    <p>Investments in securities market are subject to market risks.</p>
+</footer>
+
+<script>
+    // Show the popup
+    function openPopup() { 
+        document.getElementById("accountModal").style.display = "block"; 
+    }
+    
+    // Hide the popup
+    function closePopup() { 
+        document.getElementById("accountModal").style.display = "none"; 
+    }
+    
+    // Close if clicked outside
+    window.onclick = function(e) { 
+        if(e.target == document.getElementById("accountModal")) {
+            closePopup(); 
         }
-    </script>
+    }
+</script>
 
 </body>
 </html>
