@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaineshkumar K. Sanghavi | Sharekhan Partner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --sharekhan-red: #ed1c24;
+            --dark-blue: #0a192f;
+            --light-bg: #f4f7f6;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: var(--light-bg);
+            color: #333;
+        }
+
+        header {
+            background: var(--white);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--sharekhan-red);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), url('https://images.unsplash.com/photo-1611974717482-58289745c08d?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            color: white;
+            padding: 100px 5%;
+            text-align: center;
+        }
+
+        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px; }
+
+        /* Dashboard Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 50px 5%;
+            margin-top: -50px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .card:hover { transform: translateY(-10px); border-bottom: 4px solid var(--sharekhan-red); }
+        .card i { font-size: 2.5rem; color: var(--sharekhan-red); margin-bottom: 15px; }
+        .card h3 { margin: 10px 0; font-size: 1.2rem; }
+
+        /* Modal / Pop-up Logic */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.7);
+        }
+
+        .modal-content {
+            background: white;
+            margin: 15% auto;
+            padding: 40px;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+        }
+
+        .btn-group { display: flex; gap: 15px; justify-content: center; margin-top: 20px; }
+        
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-online { background: #28a745; color: white; }
+        .btn-offline { background: #007bff; color: white; }
+        .close-btn { position: absolute; right: 20px; top: 10px; font-size: 25px; cursor: pointer; }
+
+        footer { text-align: center; padding: 40px; background: var(--dark-blue); color: white; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">J.K. SANGHAVI</div>
+    <div class="partner-tag">Official Sharekhan Partner</div>
+</header>
+
+<section class="hero">
+    <h1>Jaineshkumar Kanaiyalal Sanghavi</h1>
+    <p>Your Trusted Share Broker & Financial Advisor</p>
+    <button class="btn btn-online" onclick="openModal()">Open Account Now</button>
+</section>
+
+<div class="services-grid">
+    <div class="card" onclick="openModal()">
+        <i>📊</i>
+        <h3>Open Account</h3>
+        <p>Start your trading journey in minutes.</p>
+    </div>
+    <div class="card">
+        <i>📈</i>
+        <h3>New SIP</h3>
+        <p>Invest systematically in Mutual Funds.</p>
+    </div>
+    <div class="card">
+        <i>🔔</i>
+        <h3>IPO Center</h3>
+        <p>Apply for upcoming Market Listings.</p>
+    </div>
+    <div class="card">
+        <i>🏛️</i>
+        <h3>New Shares</h3>
+        <p>Expert recommendations for your portfolio.</p>
+    </div>
+</div>
+
+<div id="accountModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2>Select Opening Method</h2>
+        <p>How would you like to proceed with your account?</p>
+        <div class="btn-group">
+            <a href="https://www.sharekhan.com/open-account" target="_blank" class="btn btn-online">Online (Fastest)</a>
+            <button class="btn btn-offline" onclick="alert('Please call us at: 9328907222 or you can visit our office in shivsakti complex , dehgam ')">Offline </button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 Jaineshkumar Kanaiyalal Sanghavi | Sharekhan Franchisee</p>
+    <p><small>Investments in securities market are subject to market risks.</small></p>
+</footer>
+
+<script>
+    function openModal() {
+        document.getElementById("accountModal").style.display = "block";
+    }
+    function closeModal() {
+        document.getElementById("accountModal").style.display = "none";
+    }
+    // Close modal if user clicks outside of it
+    window.onclick = function(event) {
+        let modal = document.getElementById("accountModal");
+        if (event.target == modal) {
+            modal.style.display = "none";  <a href="https://wa.me/91 9328907222" style="position:fixed; bottom:20px; right:20px; background:#25d366; color:white; padding:15px; border-radius:50%; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index:9999;">
+    <i class="fab fa-whatsapp"></i>
+</a>
+        }
+    }
+</script>
+
+</body>
+</html>
