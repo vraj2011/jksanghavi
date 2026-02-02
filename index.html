@@ -11,7 +11,18 @@
             --sk-red: #ed1c24;
             --sk-black: #1a1a1a;
             --glass: rgba(255, 255, 255, 0.9);
-        }
+        }<div id="accountModal" class="modal">
+    <div class="modal-content">
+        <h2 style="color:#ed1c24">Get Started</h2>
+        <p>Choose your preferred account opening method:</p>
+        <div class="btn-box">
+            <a href="https://www.sharekhan.com/open-account" target="_blank" class="btn btn-online" style="background:#ed1c24; color:white; display:block; padding:15px; margin-bottom:10px; border-radius:50px; text-decoration:none; font-weight:bold;">ONLINE (15 Mins)</a>
+            
+            <button class="btn btn-offline" onclick="alert('Contact Jaineshkumar at: [9328907222]')" style="width:100%; padding:15px; border-radius:50px; cursor:pointer;">OFFLINE (Talk to Us)</button>
+        </div>
+        <p onclick="closeModal()" style="margin-top:20px; cursor:pointer; color:grey">Close</p>
+    </div>
+</div>
 <div class="card" onclick="openModal()">
     <i class="fas fa-user-plus"></i>
     <h3>Open Account</h3>
@@ -187,5 +198,6 @@
     <div class="modal-content">
         <h2 style="color:var(--sk-red)">Get Started</h2>
         <p
+
 
 
